@@ -1,5 +1,8 @@
 # PROJET FINAL: Analyse de données et machine learning avec Python
 
+# LIEN DU DEPLOIEMENT
+https://josephyobouet.streamlit.app/
+
 ## Description du projet
 Ce projet consiste à analyser des données collectées sur la pandémie de COVID-19 à partir d'un fichier CSV. 
 L'objectif principal est de construire un modèle d'apprentissage automatique capable de prédire si un patient est à haut risque ou non, en fonction de ses symptômes, de son état et de ses antécédents médicaux.
