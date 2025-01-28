@@ -46,11 +46,11 @@ user_input = {
 
 input_df = pd.DataFrame([user_input])
 input_df = input_df.drop(columns=["MEDICAL_UNIT"])
-#user_data = input_df.drop(columns=['AGE'])
+user_data = input_df.drop(columns=['AGE'])
 
 #user_data_dummies = pd.get_dummies(user_data.astype("category"), drop_first=False).astype(int)
 
-#user_data['AGE'] = input_df['AGE']
+user_data['AGE'] = input_df['AGE']
 
 user_data = scaler.fit_transform(user_data)
            
