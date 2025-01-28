@@ -54,7 +54,7 @@ user_data['AGE'] = input_df['AGE']
 
 user_data = scaler.fit_transform(user_data)
            
-user_data = user_data.fillna(0)
+#user_data = user_data.fillna(0)
 #for col in training_cols:
    # if col not in user_data_dummies:
         #user_data_dummies[col] = 0
