@@ -72,8 +72,7 @@ with open('model.pkl', 'rb') as file:
 # Prédiction du risque
 prediction = lr_model.predict(user_data_dummies)
 
-# test_example = X_test.iloc[0:1]  # Exemple d'entrée du jeu de test
-print(prediction)
+# print(prediction )
 
 # Affichage du résultat
 st.write("Risque élevé" if prediction[0] == 1 else "Faible risque")
