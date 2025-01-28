@@ -68,7 +68,7 @@ model_test = model_test.fillna(0)
 
 #user_data_dummies = user_data_dummies[training_cols]
 
-with open('lr_model.pkl', 'rb') as file:
+with open('nb_model.pkl', 'rb') as file:
     lr_model = pickle.load(file)
 
 prediction = lr_model.predict(model_test)
