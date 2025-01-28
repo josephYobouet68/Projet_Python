@@ -60,7 +60,8 @@ for col in training_cols:
         model_test[col] = user_data_dummies[col] 
     else:
         model_test[col] = 0
-
+           
+model_test = model_test.fillna(0)
 #for col in training_cols:
    # if col not in user_data_dummies:
         #user_data_dummies[col] = 0
