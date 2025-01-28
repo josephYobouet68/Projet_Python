@@ -46,22 +46,15 @@ user_input = {
 
 input_df = pd.DataFrame([user_input])
 input_df = input_df.drop(columns=["MEDICAL_UNIT"])
-user_data = input_df.drop(columns=['AGE'])
+#user_data = input_df.drop(columns=['AGE'])
 
-user_data_dummies = pd.get_dummies(user_data.astype("category"), drop_first=False).astype(int)
+#user_data_dummies = pd.get_dummies(user_data.astype("category"), drop_first=False).astype(int)
 
-user_data_dummies['AGE'] = input_df['AGE']
+#user_data['AGE'] = input_df['AGE']
 
-user_data_dummies['AGE'] = scaler.fit_transform(user_data_dummies[['AGE']])
-
-model_test = pd.DataFrame()
-for col in training_cols:
-    if col in user_data_dummies:
-        model_test[col] = user_data_dummies[col] 
-    else:
-        model_test[col] = 0
+user_data = scaler.fit_transform(user_data)
            
-model_test = model_test.fillna(0)
+user_data = user_data.fillna(0)
 #for col in training_cols:
    # if col not in user_data_dummies:
         #user_data_dummies[col] = 0
@@ -71,7 +64,7 @@ model_test = model_test.fillna(0)
 with open('lr_model.pkl', 'rb') as file:
     lr_model = pickle.load(file)
 
-prediction = lr_model.predict(model_test)
+prediction = lr_model.predict(user_data)
 
 if prediction[0] == 1:
     st.write("Risque élevé")
