@@ -24,22 +24,22 @@ training_cols = ['USMER_1', 'USMER_2', 'SEX_1', 'SEX_2', 'PATIENT_TYPE_1',
 # Créer un formulaire de saisie pour l'utilisateur
 st.sidebar.header("Paramètres de saisie")
 user_input = {
-    "USMER": st.sidebar.selectbox("USMER", [1, 2]),
-    "MEDICAL_UNIT": st.sidebar.selectbox("MEDICAL_UNIT", [1, 2]),
-    "SEX": st.sidebar.selectbox("SEX", [1, 2]),
-    "PATIENT_TYPE": st.sidebar.selectbox("PATIENT_TYPE", [1, 2]),
-    "PNEUMONIA": st.sidebar.selectbox("PNEUMONIA", [1, 2]),
-    "PREGNANT": st.sidebar.selectbox("PREGNANT", [1, 2]),
-    "DIABETES": st.sidebar.selectbox("DIABETES", [1, 2]),
-    "COPD": st.sidebar.selectbox("COPD", [1, 2]),
-    "ASTHMA": st.sidebar.selectbox("ASTHMA", [1, 2]),
-    "INMSUPR": st.sidebar.selectbox("INMSUPR", [1, 2]),
-    "HIPERTENSION": st.sidebar.selectbox("HIPERTENSION", [1, 2]),
-    "OTHER_DISEASE": st.sidebar.selectbox("OTHER_DISEASE", [1, 2]),
-    "CARDIOVASCULAR": st.sidebar.selectbox("CARDIOVASCULAR", [1, 2]),
-    "OBESITY": st.sidebar.selectbox("OBESITY", [1, 2]),
-    "RENAL_CHRONIC": st.sidebar.selectbox("RENAL_CHRONIC", [1, 2]),
-    "TOBACCO": st.sidebar.selectbox("TOBACCO", [1, 2]),
+    "USMER": st.sidebar.selectbox("USMER", ['Oui', 'Non']),
+    "MEDICAL_UNIT": st.sidebar.selectbox("MEDICAL_UNIT", ['Oui', 'Non']),
+    "SEX": st.sidebar.selectbox("SEX", ['Oui', 'Non']),
+    "PATIENT_TYPE": st.sidebar.selectbox("PATIENT_TYPE", ['Oui', 'Non']),
+    "PNEUMONIA": st.sidebar.selectbox("PNEUMONIA", ['Oui', 'Non']),
+    "PREGNANT": st.sidebar.selectbox("PREGNANT", ['Oui', 'Non']),
+    "DIABETES": st.sidebar.selectbox("DIABETES", ['Oui', 'Non']),
+    "COPD": st.sidebar.selectbox("COPD", ['Oui', 'Non']),
+    "ASTHMA": st.sidebar.selectbox("ASTHMA", ['Oui', 'Non']),
+    "INMSUPR": st.sidebar.selectbox("INMSUPR", ['Oui', 'Non']),
+    "HIPERTENSION": st.sidebar.selectbox("HIPERTENSION", ['Oui', 'Non']),
+    "OTHER_DISEASE": st.sidebar.selectbox("OTHER_DISEASE", ['Oui', 'Non']),
+    "CARDIOVASCULAR": st.sidebar.selectbox("CARDIOVASCULAR", ['Oui', 'Non']),
+    "OBESITY": st.sidebar.selectbox("OBESITY", ['Oui', 'Non']),
+    "RENAL_CHRONIC": st.sidebar.selectbox("RENAL_CHRONIC", ['Oui', 'Non']),
+    "TOBACCO": st.sidebar.selectbox("TOBACCO", ['Oui', 'Non']),
     "AGE": st.sidebar.slider("AGE", 0, 120, 42),
 }
 
@@ -57,8 +57,8 @@ with open('lr_model.pkl', 'rb') as file:
 
 prediction = lr_model.predict(user_data)
 
-if prediction[0] == 1:
-    st.write("Risque élevé")
-else:
-    st.write("Faible risque")
+# print(prediction)
+
+# Affichage du résultat
+st.write("Risque élevé" if prediction[0] == 1 else "Faible risque")
 
