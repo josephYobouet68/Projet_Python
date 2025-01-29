@@ -13,13 +13,18 @@ scaler = StandardScaler()
 # --- Application Streamlit ---
 st.title("COVID-19 Prédiction du risque")
 
-training_cols = ['USMER_1', 'USMER_2', 'SEX_1', 'SEX_2', 'PATIENT_TYPE_1',
-       'PATIENT_TYPE_2', 'PNEUMONIA_1', 'PNEUMONIA_2', 'PREGNANT_1',
-       'PREGNANT_2', 'DIABETES_1', 'DIABETES_2', 'COPD_1', 'COPD_2',
-       'ASTHMA_1', 'ASTHMA_2', 'INMSUPR_1', 'INMSUPR_2', 'HIPERTENSION_1',
-       'HIPERTENSION_2', 'OTHER_DISEASE_1', 'OTHER_DISEASE_2',
-       'CARDIOVASCULAR_1', 'CARDIOVASCULAR_2', 'OBESITY_1', 'OBESITY_2',
-       'RENAL_CHRONIC_1', 'RENAL_CHRONIC_2', 'TOBACCO_1', 'TOBACCO_2', 'AGE']
+# training_cols = ['USMER_1', 'USMER_2', 'SEX_1', 'SEX_2', 'PATIENT_TYPE_1',
+#        'PATIENT_TYPE_2', 'PNEUMONIA_1', 'PNEUMONIA_2', 'PREGNANT_1',
+#        'PREGNANT_2', 'DIABETES_1', 'DIABETES_2', 'COPD_1', 'COPD_2',
+#        'ASTHMA_1', 'ASTHMA_2', 'INMSUPR_1', 'INMSUPR_2', 'HIPERTENSION_1',
+#        'HIPERTENSION_2', 'OTHER_DISEASE_1', 'OTHER_DISEASE_2',
+#        'CARDIOVASCULAR_1', 'CARDIOVASCULAR_2', 'OBESITY_1', 'OBESITY_2',
+#        'RENAL_CHRONIC_1', 'RENAL_CHRONIC_2', 'TOBACCO_1', 'TOBACCO_2', 'AGE']
+
+
+training_cols = ['USMER', 'SEX', 'PATIENT_TYPE', 'PNEUMONIA', 'PREGNANT',
+       'DIABETES', 'COPD','ASTHMA', 'INMSUPR', 'HIPERTENSION', 'OTHER_DISEASE',
+       'CARDIOVASCULAR', 'CARDIOVASCULAR', 'OBESITY', 'RENAL_CHRONIC', 'TOBACCO', 'AGE']
 
 # Créer un formulaire de saisie pour l'utilisateur
 st.sidebar.header("Paramètres de saisie")
