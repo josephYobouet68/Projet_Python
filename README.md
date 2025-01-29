@@ -48,7 +48,7 @@ Les contributions sont les bienvenues ! Veuillez soumettre vos propositions via 
 ## AUTEURS
 - YOBOUET KOFFI JOSEPH
 - AMA FLAVIE EUROLINE
-- KOUAME ANGE GHYSLAIN
+- KOUAME ANGE-GHISLAIN
 
   
 
